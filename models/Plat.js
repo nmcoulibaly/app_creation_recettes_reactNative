@@ -5,6 +5,10 @@ const PlatSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: String,
+        required: true,
+    },
     recette_id: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Recette'
