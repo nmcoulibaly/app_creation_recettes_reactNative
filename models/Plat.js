@@ -13,6 +13,9 @@ const PlatSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Recette'
     }],
+    image: {
+        type: String
+    }
 });
 
 module.exports = Plat = mongoose.model("Plat", PlatSchema, "dish");

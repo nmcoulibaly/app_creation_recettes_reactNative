@@ -19,7 +19,7 @@ const routesUser = require('./routes/UserRoutes');
 connect()
 
 app.use('/plats', routesPlat);
-// app.use('/recettes', routesRecette);
+app.use('/recettes', routesRecette);
 app.use('/user', routesUser);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerConf));
 
