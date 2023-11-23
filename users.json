@@ -1,0 +1,35 @@
+[
+    {
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "telephone": "0123456789",
+      "email": "jean.dupont@example.com",
+      "mot_de_passe": "mdp123",
+      "plat_id": ["655f5d4a965e4b2718a351b0","655f5d4b965e4b2718a351b1"]
+    },
+    {
+      "nom": "Martin",
+      "prenom": "Marie",
+      "telephone": "0987654321",
+      "email": "marie.martin@example.com",
+      "mot_de_passe": "marie123",
+      "plat_id": ["655f5d4b965e4b2718a351b2", "655f5d4b965e4b2718a351b3", "655f5d4b965e4b2718a351b4"]
+    },
+    {
+      "nom": "Lefevre",
+      "prenom": "Pierre",
+      "telephone": "0654321098",
+      "email": "pierre.lefevre@example.com",
+      "mot_de_passe": "123pierre",
+      "plat_id": ["655f5d4b965e4b2718a351b5", "655f5d4b965e4b2718a351b6"]
+    },
+    {
+      "nom": "Dubois",
+      "prenom": "Sophie",
+      "telephone": "0789012345",
+      "email": "sophie.dubois@example.com",
+      "mot_de_passe": "mdp456",
+      "plat_id": ["655f5d4b965e4b2718a351b7", "655f5d4b965e4b2718a351b8"]
+    }
+  ]
+  

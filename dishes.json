@@ -1,0 +1,47 @@
+[
+  {
+    "nom": "Tarte aux pommes",
+    "recette_id": "655f5a65965e4b2718a351a4",
+    "image": "tarte_aux_pommes.jpg"
+  },
+  {
+    "nom": "Poulet rôti",
+    "recette_id": "655f5a65965e4b2718a351a5",
+    "image": "poulet_roti.jpg"
+  },
+  {
+    "nom": "Salade César",
+    "recette_id": "655f5a65965e4b2718a351a6",
+    "image": "salade_cesar.jpg"
+  },
+  {
+    "nom": "Lasagnes",
+    "recette_id": "655f5a65965e4b2718a351a7",
+    "image": "lasagnes.jpg"
+  },
+  {
+    "nom": "Curry de poulet",
+    "recette_id": "655f5a65965e4b2718a351a8",
+    "image": "curry_de_poulet.jpg"
+  },
+  {
+    "nom": "Pâtes Carbonara",
+    "recette_id": "655f5a65965e4b2718a351a9",
+    "image": "pates_carbonara.jpg"
+  },
+  {
+    "nom": "Bœuf bourguignon",
+    "recette_id": "655f5a65965e4b2718a351aa",
+    "image": "boeuf_bourguignon.jpg"
+  },
+  {
+    "nom": "Sushi",
+    "recette_id": "655f5a65965e4b2718a351ab",
+    "image": "sushi.jpg"
+  },
+  {
+    "nom": "Fajitas au poulet",
+    "recette_id": "655f5a65965e4b2718a351ac",
+    "image": "fajitas_poulet.jpg"
+  }
+]
