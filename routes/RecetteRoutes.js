@@ -5,15 +5,15 @@ const router = require('express').Router()
 router.get('/', recetteController.getRecettes);
 
 // Afficher une recette en fonction de l'id
-router.get('/recettes/:id', recetteController.getRecetteById);
+router.get('/:id', recetteController.getRecetteById);
 
 // Créer une nouvelle recette
-router.post('/recettes', recetteController.createRecette);
+router.post('/ajout', recetteController.createRecette);
 
 // Modifier une recette en fonction de l'id
-router.put('/recettes/:id', recetteController.updateRecette);
+router.put('/maj/:id', recetteController.updateRecette);
 
 // Supprimer une recette en fonction de l'id
-router.delete('/recettes/:id', recetteController.deleteRecette);
+router.delete('/:id', recetteController.deleteRecette);
 
 module.exports = router;
