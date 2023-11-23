@@ -2,15 +2,15 @@ const PlatController = require('../controllers/PlatsController');
 const RouterPlat = require('express').Router();
 /**
  * @swagger
- * /products:
+ * /plats:
  *   get:
- *     summary: Liste des produits
- *     description: Renvoie la liste de tous les produits disponibles.
+ *     summary: Liste des plats
+ *     description: Renvoie la liste de tous les plats disponibles.
  *     tags:
- *       - Products
+ *       - Plats
  *     responses:
  *       200:
- *         description: Liste des produits récupérée avec succès
+ *         description: Liste des plats récupérée avec succès
  *       500:
  *         description: Erreur serveur
  */
@@ -18,26 +18,26 @@ RouterPlat.get('/', PlatController.getPlats);
 
 /**
  * @swagger
- * /products/{id}:
+ * /plats/{id}:
  *   get:
- *     summary: Récupérer un produit par ID
- *     description: Renvoie un produit en fonction de son ID.
+ *     summary: Récupérer un plat par ID
+ *     description: Renvoie un plat en fonction de son ID.
  *     tags:
- *       - Products
+ *       - Plats
  *     parameters:
  *       - in: path
  *         name: id
  *         required: true
- *         description: ID du produit à récupérer
+ *         description: ID du plat à récupérer
  *         schema:
  *           type: string
  *     responses:
  *       200:
- *         description: Produit récupéré avec succès
+ *         description: Plat récupéré avec succès
  *       404:
- *         description: Produit non trouvé
+ *         description: Plat non trouvé
  *       500:
  *         description: Erreur serveur
  */
-RouterPlat.get('/plat-details/:id', )
+RouterPlat.get('/plat-details/:id', PlatController.getPlatsById);
 module.exports = RouterPlat;

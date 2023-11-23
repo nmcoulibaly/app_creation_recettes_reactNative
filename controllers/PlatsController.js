@@ -16,7 +16,7 @@ const getPlats = (req, res) => {
 }
 
 const getPlatsById = (req, res) => {
-    Plat.find({ "_id": req.body.id })
+    Plat.findById(req.params.id)
         .then(plat => {
             res.status(200).json(plat);
             console.log(plat);
