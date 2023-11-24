@@ -49,7 +49,7 @@ router.get('/:id', recetteController.getRecetteById);
  *     summary: Création d'une nouvelle recette
  *     description: Permet à un nouvel utilisateur de Créer une nouvelle recette.
  *     tags:
- *       - Ajout
+ *       - Recettes
  *     responses:
  *       200:
  *         description: Recette enregistrée avec succès
@@ -64,10 +64,10 @@ router.post('/ajout', recetteController.createRecette);
  * @swagger
  * /maj/{id}:
  *   put:
- *     summary: Modifier une recette 
+ *     summary: Modifier une recette
  *     description: Permet à un utilisateur de modifier une recette existant en fonction de son ID.
  *     tags:
- *       - Users
+ *       - User
  *     parameters:
  *       - in: path
  *         name: id
@@ -87,10 +87,10 @@ router.put('/maj/:id', recetteController.updateRecette);
  * @swagger
  * /{id}:
  *   delete:
- *     summary: Supprimer une recette 
+ *     summary: Supprimer une recette
  *     description: Permet à un administrateur de supprimer une recette existante en fonction de son ID.
  *     tags:
- *       - Users
+ *       - User
  *     parameters:
  *       - in: path
  *         name: id

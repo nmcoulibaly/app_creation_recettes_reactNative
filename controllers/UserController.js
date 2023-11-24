@@ -49,7 +49,7 @@ const registerUser = (req, res) => {
 const addPlat = (req, res) => {
     const nom = req.body.nom;
     const image = req.body.image;
-    console.log(nom);
+    const id = req.params.id;
 
     const newPlat = new Plats({
         nom,
@@ -57,8 +57,15 @@ const addPlat = (req, res) => {
     })
     newPlat.save()
         .then(plat => {
-            res.status(200).json({ message: 'plat enregistré!' });
-            console.log(plat);
+            return Users.findByIdAndUpdate(
+                id,
+                { $push: { plat_id: plat._id } },
+                { new: true }
+            );
+        })
+        .then(user => {
+            res.status(200).json({ message: 'Plat enregistré et utilisateur mis à jour!' });
+            console.log(user);
         })
         .catch(err => {
             console.error(err);
@@ -90,16 +97,18 @@ const deletePlat = (req, res) => {
         })
 }
 const getPlatUser = async (req, res) => {
+  try {
     const id = req.params.id;
-    const plat = await Users.find({ "plat_id": id });
-    if (plat.length == 0) {
-        return res.status(404).json({ notFound: 'Aucun plat trouvé' });
-    }
-    const platIds = plat.map(plat => plat.plat_id);
-    const plats = await Plats.find({ "_id": { $in: platIds } });
-    if (plats.length === 0) {
-        return res.status(404).json({ notFound: 'Plat non trouvé' });
-    }
+    const user = await Users.findById(id).populate('plat_id');
+
+    const plats = user.plat_id;
+    console.log(plats);
+
     res.status(200).json(plats);
-}
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erreur serveur' });
+  }
+};
+
 module.exports = { loginUser, registerUser, addPlat, putPlat, deletePlat, getPlatUser }

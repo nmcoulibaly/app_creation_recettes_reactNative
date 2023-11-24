@@ -21,10 +21,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    plat_id: {
+    plat_id: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Plat'
-    },
+    }],
 });
 
 module.exports = Users = mongoose.model("Users", UserSchema, "user");
