@@ -12,6 +12,7 @@ app.use(bodyParse.json());
 app.use(cors());
 app.use(express.json());
 
+
 const routesPlat = require('./routes/PlatRoutes');
 const routesRecette = require('./routes/RecetteRoutes');
 const routesUser = require('./routes/UserRoutes');

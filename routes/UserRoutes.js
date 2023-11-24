@@ -1,5 +1,6 @@
 const UserController = require('../controllers/UserController');
-const express = require('express')
+const express = require('express');
+const User = require('../models/User');
 const routerUser = express.Router();
 
 /**
@@ -36,5 +37,70 @@ routerUser.post('/login', UserController.loginUser);
  *         description: Erreur serveur
  */
 routerUser.post('/register', UserController.registerUser);
+/**
+ * @swagger
+ * /user/add/plat:
+ *   post:
+ *     summary: Ajouter un plat 
+ *     description: Permet à un utilisateur qui a un compte d'ajouter un nouveau plat à la liste.
+ *     tags:
+ *       - Admin
+ *     responses:
+ *       200:
+ *         description: Plat ajouté avec succès
+ *       400:
+ *         description: Erreur client
+ *       500:
+ *         description: Erreur serveur
+ */
+routerUser.post('/add/plat', UserController.addPlat);
 
+/**
+ * @swagger
+ * user/put/plat/{id}:
+ *   put:
+ *     summary: Modifier un plat 
+ *     description: Permet à un administrateur de modifier un plat existant en fonction de son ID.
+ *     tags:
+ *       - Admin
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID du plat à modifier
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Plat modifié avec succès
+ *       404:
+ *         description: Plat non trouvé
+ */
+routerUser.put('/put/plat/:id', UserController.putPlat);
+
+/**
+ * @swagger
+ * /delete/plat/{id}:
+ *   delete:
+ *     summary: Supprimer un plat 
+ *     description: Permet à un administrateur de supprimer un plat existant en fonction de son ID.
+ *     tags:
+ *       - Admin
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID du plat à supprimer
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Plat supprimé avec succès
+ *       404:
+ *         description: Plat non trouvé
+ *       500:
+ *         description: Erreur serveur
+ */
+routerUser.delete('/delete/plat/:id', UserController.deletePlat);
+routerUser.post('/listePlatUser/:id', UserController.getPlatUser);
 module.exports = routerUser;
